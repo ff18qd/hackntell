@@ -7,14 +7,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 app.post('/hola', (req, res) => {
-/* Assume user input birthday month is from one element of months array in abbreviation format.
+/* Assume user input birthday month is from one element of months array.
   The date of birth is day month year format.
   For calculation convenience, currMonth increase by 1.
-  bDayDay is user's birthday day.
-  bDayMonth is user's birthday month.
+  bDayDay is user's birthday day for example 20.
+  bDayMonth is user's birthday month for example 8 means August.
   Assume user always inputs valid date of birth and valid name.
 */
-  const months = ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const months = ['', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August',
+    'September', 'October', 'November', 'December'];
   const currDate = new Date();
   const currMonth = currDate.getMonth() + 1;
   const currDay = currDate.getDate();
